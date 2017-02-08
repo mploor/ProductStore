@@ -1,0 +1,13 @@
+<div class="aboutBox">
+<h2><strong>{{controller.beer.name}}</strong></h2>
+<h3>Brewery: {{controller.beer.brewery}}</h3>
+<h5>Style: {{controller.beer.style}}</h5>
+<h5>ABV: {{controller.beer.abv}}%</h5>
+<br />
+<h5>{{controller.beer.price | currency}}</h5>
+<h5># in inventory: {{controller.beer.numInInventory}}</h5>
+</div>
+<br />
+<div>
+    <strong><a ui-sref="home" class="return">Return to home page</a></strong>
+</div>

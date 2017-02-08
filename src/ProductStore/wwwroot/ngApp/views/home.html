@@ -1,0 +1,21 @@
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Beer Name <button class="btn btn-xs" ng-click="controller.sortChoice('name')"><span class="glyphicon glyphicon-chevron-down"></span></button></th>
+            <th>Style <button class="btn btn-xs" ng-click="controller.sortChoice('style')"><span class="glyphicon glyphicon-chevron-down"></span></button></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="beer in controller.beers | orderBy: controller.sortBy">
+            <td><a ui-sref="about({id: beer.id})">{{beer.name}}</a></td>
+            <td>{{beer.style}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<!--Filter Unique styles-->
+<!--<p>Testing</p>
+<ul ng-repeat="beer in controller.beers | unique: 'style'">
+    <li>{{beer.style}}</li>
+</ul>-->
