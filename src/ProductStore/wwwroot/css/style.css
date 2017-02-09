@@ -2,6 +2,11 @@
     background-image: url('../images/giphy.gif');
 }
 
+img {
+    float: left;
+    padding: 20px;
+}
+
 table {
     background-color:antiquewhite;
     opacity: .85;
