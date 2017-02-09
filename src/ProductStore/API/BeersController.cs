@@ -33,5 +33,33 @@ namespace ProductStore.API
             Beer beer = (from b in _db.Beers where b.Id == id select b).FirstOrDefault();
             return beer;
         }
+
+        [HttpPost]
+        public IActionResult Post([FromBody]Beer beer)
+        {
+            if (beer == null)
+            {
+                return BadRequest();
+            } else if (beer.Id == 0)
+            {
+                _db.Beers.Add(beer);
+                _db.SaveChanges();
+                return Ok();
+            } else
+            {
+                _db.Beers.Update(beer);
+                _db.SaveChanges();
+                return Ok();
+            }
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
+        {
+            Beer beerToDelete = (from b in _db.Beers where b.Id == id select b).FirstOrDefault();
+            _db.Beers.Remove(beerToDelete);
+            _db.SaveChanges();
+            return Ok();
+        }
     }
 }

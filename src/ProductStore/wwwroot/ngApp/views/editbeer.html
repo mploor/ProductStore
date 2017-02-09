@@ -1,0 +1,35 @@
+﻿<div class="container">
+    <form ng-submit="controller.addBeer()">
+        <div class="form-group">
+            <label class="col-sm-2">Beer name:</label>
+            <input type="text" ng-model="controller.beer.name" />
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2">Brewery:</label>
+            <input type="text" ng-model="controller.beer.brewery" />
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2">Style:</label>
+            <input type="text" ng-model="controller.beer.style" />
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2">ABV:</label>
+            <input type="text" ng-model="controller.beer.abv" />
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2"># in inventory:</label>
+            <input type="text" ng-model="controller.beer.numInInventory" />
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2">Price:</label>
+            <input type="text" ng-model="controller.beer.price" />
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2">Image URL:</label>
+            <input type="text" ng-model="controller.beer.imageUrl" width="80" />
+        </div>
+        <div class="form-group">
+            <input type="submit" ng-click="controller.editBeer()" class="btn btn-primary" value="Update Beer" />
+        </div>
+    </form>
+</div>

@@ -13,10 +13,22 @@ namespace ProductStore {
                 controller: ProductStore.Controllers.HomeController,
                 controllerAs: 'controller'
             })
+            .state('addBeer', {
+                url: '/addBeer',
+                templateUrl: '/ngApp/views/addbeer.html',
+                controller: ProductStore.Controllers.AddBeerController,
+                controllerAs: 'controller'
+            })
             .state('about', {
                 url: '/about/:id',
                 templateUrl: '/ngApp/views/about.html',
                 controller: ProductStore.Controllers.AboutController,
+                controllerAs: 'controller'
+            })
+            .state('editBeer', {
+                url: '/editBeer/:id',
+                templateUrl: '/ngApp/views/editbeer.html',
+                controller: ProductStore.Controllers.EditBeerController,
                 controllerAs: 'controller'
             })
             .state('notFound', {

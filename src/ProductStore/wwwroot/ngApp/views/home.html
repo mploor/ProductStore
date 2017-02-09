@@ -7,12 +7,15 @@
         </tr>
     </thead>
     <tbody>
-        <tr ng-repeat="beer in controller.beers | orderBy: controller.sortBy">
-            <td><a ui-sref="about({id: beer.id})">{{beer.name}}</a></td>
+        <tr ng-repeat="beer in controller.beers | orderBy: controller.sortBy" ui-sref="about({id: beer.id})">
+            <td>{{beer.name}}</td>
             <td>{{beer.style}}</td>
         </tr>
     </tbody>
 </table>
+
+<br />
+<button ui-sref="addBeer" class="btn btn-default">Add Beer</button>
 
 <!--Filter Unique styles-->
 <!--<p>Testing</p>

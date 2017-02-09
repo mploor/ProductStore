@@ -14,6 +14,6 @@ namespace ProductStore.Models
         public decimal Abv { get; set; }
         public int NumInInventory { get; set; }
         public decimal Price { get; set; }
-
+        public string ImageUrl { get; set; }
     }
 }

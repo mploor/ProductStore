@@ -1,13 +1,34 @@
 <div class="aboutBox">
-<h2><strong>{{controller.beer.name}}</strong></h2>
-<h3>Brewery: {{controller.beer.brewery}}</h3>
-<h5>Style: {{controller.beer.style}}</h5>
-<h5>ABV: {{controller.beer.abv}}%</h5>
-<br />
-<h5>{{controller.beer.price | currency}}</h5>
-<h5># in inventory: {{controller.beer.numInInventory}}</h5>
+    <h2><strong>{{controller.beer.name}}</strong></h2>
+
+    <h3>Brewery: {{controller.beer.brewery}}</h3>
+    <h5>Style: {{controller.beer.style}}</h5>
+    <h5>ABV: {{controller.beer.abv}}%</h5>
+    <br />
+    <button class="btn btn-danger detailButton"  data-toggle="modal" data-target="#delConfirm">Delete</button>
+    <button class="btn btn-primary detailButton" ng-click="controller.editBeer(controller.beer.id)">Edit</button> 
+    <h5>{{controller.beer.price | currency}}</h5>
+    <h5># in inventory: {{controller.beer.numInInventory}}</h5>
+
 </div>
 <br />
 <div>
     <strong><a ui-sref="home" class="return">Return to home page</a></strong>
+</div>
+
+<div class="modal" id="delConfirm">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Confirm Delete</h3>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to delete {{controller.beer.name}}?</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-default" type="button" data-dismiss="modal">Cancel</button>
+                <button class="btn btn-danger" type="button" ng-click="controller.deleteBeer(controller.beer.id)" data-dismiss="modal">Delete</button>
+            </div>
+        </div>
+    </div>
 </div>
